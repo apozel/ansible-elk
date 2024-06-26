@@ -1,0 +1,8 @@
+- name: Repos | Check if yum repo initialised
+  ansible.builtin.copy:
+    src: files/{{ item }}
+    dest: /etc/yum.repos.d/{{ item }}
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+  with_items: "{{ yum_repo_installed }}"

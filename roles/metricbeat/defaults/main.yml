@@ -4,7 +4,7 @@ state: "started"
 recreate: "no"
 firewalld_zone: "public"
 firewalld_enabled: "no"
-timezone: "Europe/Budapest"
+timezone: "Europe/Paris"
 
 # networking
 metricbeat_pod_name: "metricbeat"

@@ -1,9 +1,9 @@
 ---
 # Elastic stack version
-elk_version: "7.15.1"
+elk_version: "8.7.1"
 
 # Elasticsearch cluster name
-elastic_cluster_name: "example.com"
+elastic_cluster_name: "elk.aix"
 
 # pod networking
 elastic_pod_network: "host"
@@ -14,14 +14,14 @@ es_roles_custom:
       cluster:
         - monitor
       indices:
-        - names: 'sng-logs-*'
+        - names: "sng-logs-*"
           privileges:
             - manage
             - write
             - read
     es_monitoring_user:
       indices:
-        - names: 'metricbeat-*'
+        - names: "metricbeat-*"
           privileges:
             - manage
 
@@ -39,4 +39,3 @@ es_users_custom:
         - remote_monitoring_collector
         - remote_monitoring_agent
         - es_monitoring_user
-

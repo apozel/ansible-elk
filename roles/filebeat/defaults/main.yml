@@ -4,7 +4,7 @@ state: "started"
 recreate: "no"
 firewalld_zone: "public"
 firewalld_enabled: "no"
-timezone: "Europe/Budapest"
+timezone: "Europe/Paris"
 
 # persistent directories
 filebeat_config: "{{ container_conf_dir }}/{{ inventory_hostname_short }}.filebeat_{{ filebeat.instance_name }}"
@@ -23,6 +23,43 @@ filebeat:
   cpu_limit: 1
   ports:
     - "5066"
+
+filebeat_modules:
+  - module: system
+    syslog:
+      enabled: true
+      var.paths: ["/var/log/messages*"]
+    auth:
+      enabled: true
+      var.paths: ["/var/log/secure*"]
+
+  - module: auditd
+    log:
+      enabled: true
+      var.paths: ["/var/log/audit/audit.log*"]
+
+
+filebeat_output:
+  elasticsearch:
+    enabled: false
+    hosts:
+      - http://elastic:9200
+    auth: 
+      api_key: api_key
+  kafka:
+    enabled: false
+    topics: "beats"
+    key: ""
+    auth: 
+      user: "beats"
+      password: "key"
+
+
+filebeat_setup:
+  kibana:
+    kibana_space: test
+    username: "filebeat_kibana_setup_user"
+    password: "{{ filebeat_kibana_setup_user_password }}"
 
 xpack_http_ca: "{{ vault_xpack_http_ca }}"
 xpack_http_ssl_verification_mode: "certificate"

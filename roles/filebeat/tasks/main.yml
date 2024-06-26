@@ -1,21 +1,4 @@
 ---
-- name: Fetch variables from other roles
-  tags:
-    - create_dirs
-    - includevars
-  block:
-    - name: Include vars from Elastic
-      ansible.builtin.include_vars:
-        file: "../../elasticsearch/defaults/main.yml"
-
-    - name: Include vars from Kibana
-      ansible.builtin.include_vars:
-        file: "../../kibana/defaults/main.yml"
-
-    - name: Include vars from Logstash
-      ansible.builtin.include_vars:
-        file: "../../logstash/defaults/main.yml"
-
 - name: Import createdirs
   ansible.builtin.include_tasks:
     file: "createdirs.yml"

@@ -85,5 +85,4 @@
       vars:
         container_name: "{{ pod_name }}"
         type: pod
-      ansible.builtin.import_role:
-        name: podman_systemd_simple
+      ansible.builtin.include_tasks: podman_systemd_simple.yml

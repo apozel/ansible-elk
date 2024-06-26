@@ -4,11 +4,15 @@ state: "started"
 recreate: "no"
 firewalld_zone: "public"
 firewalld_enabled: "no"
-timezone: "Europe/Budapest"
+timezone: "Europe/Paris"
 
 # networking
 logstash_pod_name: "logstash"
 logstash_pod_network: "host"
+
+# defaults for created directories and files
+owner_uid: "1000"
+group_uid: "1000"
 
 # persistent directories
 logstash_config: "{{ container_conf_dir }}/{{ inventory_hostname_short }}.logstash_{{ logstash.instance_name }}"
@@ -53,15 +57,6 @@ logstash:
     - "9601"
 
 logstash_pipelines:
-  - name: arcsight
-    type: arcsight
-    id: "001"
-    enabled: false
-    input_port: "7500"
-    pipeline_workers: "1"
-    output_user: logstash_internal
-    output_password: "{{ logstash_internal_password }}"
-    output_index: "arcsight-%{+YYYY.MM.dd}"
   - name: beats
     type: beats
     id: "001"
@@ -70,10 +65,16 @@ logstash_pipelines:
     pipeline_workers: "1"
     output_user: logstash_internal
     output_password: "{{ logstash_internal_password }}"
-    output_index: '%{[@metadata][beat]}-%{[@metadata][version]}'
+    output_index: "%{[@metadata][beat]}-%{[@metadata][version]}"
 
 xpack_http_ca: "{{ vault_xpack_http_ca }}"
 # logstash does not support pkcs12 but only pkcs8
 # perpared but not used yet, depends on pipeline configs
 logstash_server_ssl_cert: "{{ vault_logstash_server_ssl_cert | default('na') }}"
 logstash_server_ssl_key: "{{ vault_logstash_server_ssl_key | default('na') }}"
+
+# podman-systemd-simple
+service_files_dir: "/etc/systemd/system"
+container_stop_timeout: 30
+service_enabled: "yes"
+service_state: "started"

@@ -1,0 +1,21 @@
+logstash:
+  instance_name: "internal01"
+  ip_address: "0.0.0.0"
+  java_opts: "-Xms2g -Xmx2g"
+  memory_limit: 2g
+  cpu_limit: 2
+  xpack_management: false
+  api_port: "9600"
+  ports:
+    - "5045"
+
+logstash_pipelines:
+  - name: beats
+    type: beats
+    id: "001"
+    enabled: true
+    input_port: "5045"
+    pipeline_workers: "1"
+    output_user: logstash_internal
+    output_password: "{{ logstash_internal_password }}"
+    output_index: "%{[@metadata][beat]}-%{[@metadata][version]}"

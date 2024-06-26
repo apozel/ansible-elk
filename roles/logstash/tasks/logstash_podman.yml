@@ -70,8 +70,7 @@
         immediate: true
         state: enabled
         zone: "{{ firewalld_zone }}"
-      loop:
-        "{{ logstash.ports }}"
+      loop: "{{ logstash.ports }}"
       when:
         - logstash_pod_network == "host"
         - firewalld_enabled | bool
@@ -80,5 +79,4 @@
       vars:
         container_name: "{{ pod_name }}"
         type: pod
-      ansible.builtin.import_role:
-        name: podman_systemd_simple
+      ansible.builtin.include_tasks: podman_systemd_simple.yml

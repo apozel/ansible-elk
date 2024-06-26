@@ -1,0 +1,44 @@
+[gxd5maj-firmware]
+baseurl = https://gxd5sonatype.nehs-digital.com/repository/gxd5maj-linux-el/$releasever/os/$basearch/
+gpgcheck = 0
+name = gxd5maj-firmware sonatype rpm repository
+sslverify = 1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5maj-firmware-dependencies]
+baseurl = https://gxd5sonatype.nehs-digital.com/repository/gxd5maj-linux-el/7/gxd5maj/gxd5maj-firmware-dependencies/
+gpgcheck = 0
+name = gxd5maj-firmware-dependencies sonatype rpm repository
+sslverify = 1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5maj-firmware-dev]
+baseurl = http://sonatype-local.aix.nehs-digital.com:8081/repository/gxd5/$releasever/os/$basearch/
+gpgcheck = 0
+name = gxd5maj-firmware sonatype rpm repository
+sslverify = 1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=0
+
+[gxd5maj-firmware-dependencies-dev]
+baseurl = http://sonatype-local.aix.nehs-digital.com:8081/repository/gxd5/$releasever/gxd5maj/gxd5maj-firmware-dependencies/
+gpgcheck = 0
+name = gxd5maj-firmware-dependencies sonatype rpm repository
+sslverify = 1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=0
+
+[gxd5microservices-local]
+baseurl = http://sonatype-local.aix.nehs-digital.com:8081/repository/gxd5pacs-linux-el/host-microservices/3.2
+gpgcheck = 0
+name = Microservices sonatype rpm repository
+sslverify = 1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=0

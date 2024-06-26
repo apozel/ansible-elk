@@ -1,0 +1,59 @@
+---
+- name: Play for installing repos on the whole stack
+  hosts: all
+  roles:
+    - role: repos
+
+- name: Play for installing podman on the whole stack
+  hosts: all
+  tasks:
+    - name: Installing podman
+      ansible.builtin.package:
+        name: "podman"
+        state: present
+
+- name: Deploy Elasticsearch hosts
+  hosts: elastic_hosts
+  roles:
+    - role: elasticsearch
+      tags:
+        - elasticsearch
+        - elk
+
+- name: Deploy Kibana hosts
+  hosts: kibana_hosts
+  roles:
+    - role: kibana
+      tags:
+        - kibana
+        - elk
+
+# - name: Deploy Filebeat hosts
+#   hosts: filebeat_hosts
+#   become: true
+#   become_method: ansible.builtin.sudo
+#   roles:
+#     - role: filebeat
+#       tags:
+#         - filebeat
+#         - elk
+#         - beats
+
+# - name: Deploy Metricbeat hosts
+#   hosts: metricbeat_hosts
+#   become: true
+#   become_method: ansible.builtin.sudo
+#   roles:
+#     - role: metricbeat
+#       tags:
+#         - metricbeat
+#         - elk
+#         - beats
+
+- name: Deploy Logstash hosts
+  hosts: logstash_hosts
+  roles:
+    - role: logstash
+      tags:
+        - logstash
+        - elk

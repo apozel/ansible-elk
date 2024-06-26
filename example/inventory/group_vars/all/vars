@@ -1,13 +1,12 @@
 ---
-
-ansible_remote_user: ansible
+ansible_remote_user: root
 # used by env_file in containers
-http_proxy: ''
-https_proxy: ''
-no_proxy: '127.0.0.1/8'
+http_proxy: ""
+https_proxy: ""
+no_proxy: "127.0.0.1/8"
 
 firewalld_enabled: "yes"
-firewalld_zone: "internal"
+firewalld_zone: "public"
 
 # used by ansible tasks
 proxy_env:

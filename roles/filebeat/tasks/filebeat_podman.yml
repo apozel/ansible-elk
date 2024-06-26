@@ -81,8 +81,7 @@
         # log_driver: journald
         # log_opt:
         #   tag=filebeat|{{ '{{' }}.ImageName{{ '}}' }}|podman
-        label:
-          process=filebeat
+        label: process=filebeat
         expose: "{{ filebeat.ports }}"
         memory: "{{ filebeat.memory_limit }}"
         cpus: "{{ filebeat.cpu_limit }}"
@@ -93,9 +92,7 @@
           - "{{ filebeat_config }}/certs/kibana_signing_ca.crt:/usr/share/filebeat/config/kibana_signing_ca.crt:ro,z"
           - "{{ filebeat_config }}/config/filebeat.yml:/usr/share/filebeat/filebeat.yml:z"
           - "{{ filebeat_data }}/logs:/var/log/filebeat:z"
-          - "{{ elastic_data }}/logs:/var/log/elasticsearch:ro,z"
-          - "{{ logstash_data }}/logs:/var/log/logstash:ro,z"
-          - "{{ kibana_data }}/logs:/var/log/kibana:ro,z"
+          - "/var/log:/var/log"
       register: result
       until: result is success
       retries: 3
@@ -118,5 +115,4 @@
       vars:
         container_name: "{{ pod_name }}"
         type: pod
-      ansible.builtin.import_role:
-        name: podman_systemd_simple
+      ansible.builtin.include_tasks: podman_systemd_simple.yml

@@ -4,7 +4,11 @@ state: "started"
 recreate: "no"
 firewalld_zone: "public"
 firewalld_enabled: "no"
-timezone: "Europe/Budapest"
+timezone: "Europe/Paris"
+
+# defaults for created directories and files
+owner_uid: "1000"
+group_uid: "1000"
 
 # persistent directories
 kibana_config: "{{ container_conf_dir }}/{{ inventory_hostname_short }}.kibana_{{ kibana.instance_name }}"
@@ -47,3 +51,9 @@ server_ssl_cert: "{{ vault_server_ssl_cert | default('na') }}"
 server_ssl_key: "{{ vault_server_ssl_key | default('na') }}"
 elasticsearch_ssl_ca: "{{ vault_elasticsearch_ssl_ca }}"
 elasticsearch_ssl_verification_mode: "certificate"
+
+# podman-systemd-simple
+service_files_dir: "/etc/systemd/system"
+container_stop_timeout: 30
+service_enabled: "yes"
+service_state: "started"

@@ -4,7 +4,7 @@ description: "Deploying Elasticsearch Stack by using podman pods and containers"
 version: "1.0.5"
 readme: "README.md"
 authors:
-    - "Balázs NÉMETH (https://balagetech.com)"
+    - "Dev Sec Ops Team (https://Nehs Digital)"
 dependencies:
     "containers.podman": ">=1.5.0"
 license:

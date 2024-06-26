@@ -1,7 +1,7 @@
 galaxy_info:
-  author: Balázs NÉMETH
+  author: Dev Sec Ops Team
   description: Runs Elasticsearch in a pod by podman
-  company: balagetech.com
+  company: Nehs Digital
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value

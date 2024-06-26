@@ -7,7 +7,6 @@
     group: root
     mode: 0644
   notify: Reload sysctl
-
 # - name: Set max map count
 #   sysctl:
 #     name: vm.max_map_count

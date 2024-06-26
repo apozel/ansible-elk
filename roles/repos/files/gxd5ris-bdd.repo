@@ -1,0 +1,17 @@
+[gxd5ris-bdd-dependencies]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8/bdd-dependencies
+name=Gxd5Ris Bdd dependencies repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-extras-tools]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/rhel8.extras/tools
+name=gxd5ris extras tools repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1

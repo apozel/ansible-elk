@@ -11,14 +11,4 @@
     - "{{ filebeat_config }}/certs"
     - "{{ filebeat_config }}/config"
 
-- name: Create placeholder directories for monitored components
-  ansible.builtin.file:
-    path: "{{ item }}"
-    state: directory
-    owner: "root"
-    group: "root"
-    mode: "0755"
-  loop:
-    - "{{ elastic_data }}/logs"
-    - "{{ logstash_data }}/logs"
-    - "{{ kibana_data }}/logs"
+

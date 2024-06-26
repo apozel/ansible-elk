@@ -1,0 +1,89 @@
+[gxd5ris-patch-externals-sesam_ccammaj]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.patch-external/sesam_ccammaj
+name=Gxd5Ris sesam_ccammaj patch external repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-patch-externals-eris_doc]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.patch-external/eris_doc
+name=Gxd5Ris erisDoc patch external repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-externals-reglements]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.external/reglements
+name=Gxd5Ris reglement external repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-patch-externals-nqs]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.patch-external/NQS
+name=NQS patch external repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-external-nqs]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.external/NQS
+name=NQS external repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-external-dmo]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.external/DMO
+name=DMO external repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-patch-externals-sesam-table50]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.patch-external/sesam_table50
+name=sesm_table50 patch external repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-patch-externals-sesam-codeps]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.patch-external/sesam_codeps
+name=sesam_codeps patch external repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-itemsender]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/rhel8.extras/itemsender
+name=gxd5ris itemsender repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-patch-externals-pyxvital-1-40-13]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.patch-external/Pyxvital_1_40_13
+name=gxd5ris pyxvital repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=0

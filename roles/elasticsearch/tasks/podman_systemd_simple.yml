@@ -10,6 +10,7 @@
       ansible.builtin.command:
         cmd: podman generate systemd -f -n -t "{{ container_stop_timeout }}" "{{ container_name }}"
         chdir: "{{ service_files_dir }}"
+        creates: "{{ service_files_dir }}/{{ service_unit }}"
 
     - name: Check that generated service unit exists
       ansible.builtin.stat:

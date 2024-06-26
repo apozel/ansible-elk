@@ -4,7 +4,7 @@ state: "started"
 recreate: false
 firewalld_zone: "public"
 firewalld_enabledd: false
-timezone: "Europe/Budapest"
+timezone: "Europe/Paris"
 
 # defaults for created directories and files
 owner_uid: "1000"
@@ -103,7 +103,7 @@ es_roles:
         - manage_ilm
         - manage_ml
       indices:
-        - names: 'filebeat-*'
+        - names: "filebeat-*"
           privileges:
             - manage
             - write
@@ -114,18 +114,20 @@ es_roles:
         - read_ilm
         - read_pipeline
       indices:
-        - names: 'filebeat-*'
+        - names: "filebeat-*"
           privileges:
             - create_doc
             - view_index_metadata
             - create_index
+            - create
+            - write
     logstash_writer:
       cluster:
         - manage_ilm
         - manage_index_templates
         - monitor
       indices:
-        - names: 'logstash-*'
+        - names: "logstash-*"
           privileges:
             - write
             - create
@@ -134,7 +136,7 @@ es_roles:
             - create_index
     logstash_reader:
       indices:
-        - names: 'logstash-*'
+        - names: "logstash-*"
           privileges:
             - read
             - view_index_metadata
@@ -177,6 +179,7 @@ es_users:
       password: "{{ logstash_internal_password }}"
       roles:
         - logstash_writer
+        - filebeat_writer
     logstash_user:
       password: "{{ logstash_user_password }}"
       roles:
@@ -205,3 +208,9 @@ logstash_admin_password: "{{ vault_logstash_admin_password | default('changeMe')
 logstash_internal_password: "{{ vault_logstash_internal_password | default('changeMe') }}"
 logstash_user_password: "{{ vault_logstash_user_password | default('changeMe') }}"
 remote_monitoring_user_password: "{{ vault_remote_monitoring_user_password | default('changeMe') }}"
+
+# podman-systemd-simple
+service_files_dir: "/etc/systemd/system"
+container_stop_timeout: 30
+service_enabled: "yes"
+service_state: "started"

@@ -1,7 +1,7 @@
 galaxy_info:
-  author: Balázs NÉMETH
+  author: Dev Sec Ops Team
   description: Runs metricbeat in a pod by podman
-  company: balagetech.com
+  company: Nehs Digital
 
   license: Apache-2.0
 

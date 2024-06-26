@@ -1,0 +1,44 @@
+filebeat:
+  instance_name: "internal01"
+  ip_address: "0.0.0.0"
+  memory_limit: 1g
+  cpu_limit: 1
+  ports:
+    - "5066"
+
+filebeat_modules:
+  
+  - module: system
+    syslog:
+      enabled: true
+      var.paths: ["/var/log/messages*"]
+    auth:
+      enabled: true
+      var.paths: ["/var/log/secure*"]
+
+  - module: auditd
+    log:
+      enabled: true
+      var.paths: ["/var/log/audit/audit.log*"]
+  
+  - module: apache
+    access:
+      enabled: true
+      var.paths:
+        [
+          "/var/log/gxd5ris/httpd/HTTP_access*",
+          "/var/log/gxd5ris/httpd/HTTPS_access*",
+          "/var/log/gxd5ris/httpd/HTTP_davdocs*",
+          "/var/log/gxd5ris/httpd/HTTPS_davdocs*",
+          "/var/log/gxd5ris/httpd/HTTP_ris*",
+          "/var/log/gxd5ris/httpd/HTTPS_ris*",
+          "/var/log/gxd5ris/httpd/HTTP_routine*",
+        ]
+    error:
+      enabled: true
+      var.paths:
+        [
+          "/var/log/gxd5ris/httpd/HTTPS_error*",
+          "/var/log/gxd5ris/httpd/HTTP_error*",
+          "/var/log/httpd/error_log*",
+        ]

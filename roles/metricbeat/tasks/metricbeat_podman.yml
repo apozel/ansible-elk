@@ -31,8 +31,7 @@
         state: "{{ state }}"
         recreate: "{{ recreate }}"
         network: "{{ metricbeat_pod_network }}"
-        label:
-          process=metricbeat
+        label: process=metricbeat
         memory: "{{ metricbeat.memory_limit }}"
         cpus: "{{ metricbeat.cpu_limit }}"
         env:
@@ -59,8 +58,7 @@
         state: "{{ state }}"
         recreate: "{{ recreate }}"
         network: "{{ metricbeat_pod_network }}"
-        label:
-          process=metricbeat
+        label: process=metricbeat
         expose: "{{ metricbeat.ports }}"
         memory: "{{ metricbeat.memory_limit }}"
         cpus: "{{ metricbeat.cpu_limit }}"
@@ -95,5 +93,4 @@
       vars:
         container_name: "{{ pod_name }}"
         type: pod
-      ansible.builtin.import_role:
-        name: podman_systemd_simple
+      ansible.builtin.include_tasks: podman_systemd_simple.yml

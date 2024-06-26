@@ -1,0 +1,98 @@
+[gxd5ris-base-app]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8/app
+name=Gxd5Ris Web base product repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-base-vendor]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8/vendor
+name=Gxd5Ris Web vendor repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-env-dependencies]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.env.php74/gxd5ris-dependencies
+name=Gxd5Ris Web env dependencies repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-app]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.app.php74/os
+name=Gxd5Ris Web app repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=0
+
+[gxd5ris-web-vendor]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.vendor.php74/os
+name=Gxd5Ris Web vendor repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=0
+
+[gxd5ris-documents]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.mount.documents/os
+name=Gxd5Ris Documents repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-documents-dependencies]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/8.mount.documents/dependencies
+name=Gxd5Ris Documents dependencies repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-extras-documentsBuilder]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/rhel8.extras/ndocumentbuilder
+name=gxd5ris extras repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-extras-mirth]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/rhel8.extras/mirth
+name=gxd5ris extras mirth repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-extras-nuti]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/rhel8.extras/nuti
+name=gxd5ris extras nuti repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1
+
+[gxd5ris-extras-tools]
+baseurl=https://gxd5sonatype.nehs-digital.com/repository/gxd5ris-linux-el/rhel8.extras/tools
+name=gxd5ris extras tools repository
+gpgcheck=0
+sslverify=1
+username=gxd5maj-client
+password=2qoSRQbvNezu
+enabled=1

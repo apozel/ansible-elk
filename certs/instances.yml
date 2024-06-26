@@ -1,0 +1,28 @@
+instances:
+  - name: elastic
+    dns:
+      - elastic
+      - elastic.elk.aix
+      - gxd5elk
+      - localhost
+    ip:
+      - 127.0.0.1
+      - 10.20.68.201
+  - name: kibana
+    dns:
+      - kibana
+      - kibana.elk.aix
+      - gxd5elk
+      - localhost
+    ip:
+      - 127.0.0.1
+      - 10.20.68.200
+  - name: logstash
+    dns:
+      - logstash
+      - logstash.elk.aix
+      - gxd5elk
+      - localhost
+    ip:
+      - 127.0.0.1
+      - 10.20.68.202

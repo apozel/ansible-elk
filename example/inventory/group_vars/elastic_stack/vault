@@ -1,62 +1,68 @@
 ---
-
 # elasticsearch
-vault_xpack_transport_ca: !vault |
+vault_xpack_transport_ca: "{{ lookup('file', '/home/tchaillan/ansible/elk/certs/ca/ca.crt') }}"
+xpack_transport_cert_format: "pem"
 
-vault_xpack_transport_ssl_keystore: !vault |
+vault_xpack_transport_ssl_keystore: ""
+vault_xpack_transport_ssl_keystore_password: ""
 
-vault_xpack_transport_ssl_keystore_password: ''
-vault_xpack_transport_ssl_cert:
-vault_xpack_transport_ssl_key:
+vault_xpack_transport_ssl_cert: "{{ lookup('file', '/home/tchaillan/ansible/elk/certs/elastic/elastic.crt') }}"
+vault_xpack_transport_ssl_key: "{{ lookup('file', '/home/tchaillan/ansible/elk/certs/elastic/elastic.key') }}"
 
 vault_xpack_http_ca: "{{ vault_xpack_transport_ca }}"
-vault_xpack_http_ssl_keystore: !vault |
+xpack_http_cert_format: "pem"
 
-vault_xpack_http_ssl_keystore_password: ''
-vault_xpack_http_ssl_cert:
-vault_xpack_http_ssl_key:
+vault_xpack_http_ssl_keystore: ""
+vault_xpack_http_ssl_keystore_password: ""
+
+vault_xpack_http_ssl_cert: "{{ lookup('file', '/home/tchaillan/ansible/elk/certs/elastic/elastic.crt') }}"
+vault_xpack_http_ssl_key: "{{ lookup('file', '/home/tchaillan/ansible/elk/certs/elastic/elastic.key') }}"
 
 # kibana
-vault_server_ssl_ca: "{{ vault_xpack_transport_ca }}"
-vault_server_ssl_keystore: "{{ vault_xpack_transport_ssl_keystore }}"
-vault_server_ssl_keystore_password: ''
-vault_server_ssl_cert:
-vault_server_ssl_key:
 vault_elasticsearch_ssl_ca: "{{ vault_server_ssl_ca }}"
+vault_server_ssl_ca: "{{ vault_xpack_transport_ca }}"
+server_ssl_cert_format: "pem"
 
-vault_apm_system_password: !vault |
+vault_server_ssl_keystore: "{{ vault_xpack_transport_ssl_keystore }}"
+vault_server_ssl_keystore_password: ""
 
-vault_beats_system_password: !vault |
+vault_server_ssl_cert: "{{ lookup('file', '/home/tchaillan/ansible/elk/certs/kibana/kibana.crt') }}"
+vault_server_ssl_key: "{{ lookup('file', '/home/tchaillan/ansible/elk/certs/kibana/kibana.key') }}"
 
-vault_elastic_password: !vault |
+# password must be at least [6] characters long
+vault_apm_system_password: "changeme"
 
-vault_filebeat_kibana_setup_user_password: !vault |
+vault_beats_system_password: "changeme"
 
-vault_filebeat_publisher_user_password: !vault |
+vault_elastic_password: "changeme"
 
-vault_filebeat_setup_user_password: !vault |
+vault_filebeat_kibana_setup_user_password: "changeme"
 
-vault_kibana_system_password: !vault |
+vault_filebeat_publisher_user_password: "changeme"
 
-vault_logstash_admin_password: !vault |
+vault_filebeat_setup_user_password: "changeme"
 
-vault_logstash_internal_password: !vault |
+vault_kibana_system_password: "changeme"
 
-vault_logstash_system_password: !vault |
+vault_logstash_admin_password: "changeme"
 
-vault_logstash_user_password: !vault |
+vault_logstash_internal_password: "changeme"
 
-vault_remote_monitoring_user_password: !vault |
+vault_logstash_system_password: "changeme"
+
+vault_logstash_user_password: "changeme"
+
+vault_remote_monitoring_user_password: "changeme"
 
 # es_users_custom
-vault_sng_writer_password: !vault |
+vault_sng_writer_password: "changeme"
 
-vault_es_monitoring_user_password: !vault |
+vault_es_monitoring_user_password: "changeme"
 
-vault_kibana_fqdn: !vault |
+vault_kibana_fqdn: "kibana.elk.aix"
 
-vault_kibana_security_encryptionkey: !vault |
+vault_kibana_security_encryptionkey: "!%echAKuJsZ83UR%bQo#*6EsEgTWWSSWMgpcgRnwSP"
 
-vault_kibana_savedobjects_encryptionkey: !vault |
+vault_kibana_savedobjects_encryptionkey: "Gx&HQbXUoV7*xB7g5^C%dN%*eUgi5a62RLuBAkRNoj"
 
-vault_kibana_reporting_encryptionkey: !vault |
+vault_kibana_reporting_encryptionkey: "Spka3^F$Q#KZ$%H5wG4UkrGtoPYX8X2Jo4@yhQ&gyU"

@@ -42,8 +42,6 @@ filebeat_modules:
 filebeat_output:
   elasticsearch:
     enabled: false
-    hosts:
-      - http://elastic:9200
     auth: 
       api_key: api_key
   kafka:
